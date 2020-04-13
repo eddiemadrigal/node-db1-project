@@ -12,7 +12,7 @@ module.exports = {
     seeds: {
       directory: "./data/seeds",
     },
-  },
+  }, 
 
   // update the following configuration to use PostgreSQL
   production: {
