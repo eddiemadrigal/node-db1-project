@@ -60,4 +60,17 @@ router.put('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  db('accounts')
+    .where({ id })
+    .del()
+    .then( accounts => {
+      res.status(202).json({ data: accounts });
+    })
+    .catch( err => {
+      res.status(500).json({ error: err.message });
+    })
+})
+
 module.exports = router;
